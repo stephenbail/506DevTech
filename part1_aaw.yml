@@ -1,0 +1,16 @@
+services:
+  db2:
+    image: mysql/mysql-server:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pair2
+      MYSQL_DATABASE: ArtistsAndWorks
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - aawdat2:/var/lib/mysql
+    ports:
+      - "53326:3306"
+
+volumes:
+  aawdat2:
+
