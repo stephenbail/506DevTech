@@ -10,17 +10,18 @@ services:
       - aawdat2:/var/lib/mysql
     ports:
       - "53326:3306"
-   phpmyadmin2:
-	image: phpmyadmin/phpmyadmin:latest
-	restart: always
-	depends_on:
-	-db2
-	environment:
-		PMA_HOST: db2
-		PMA_USER: root
-		PMA_PASSWORD: pair2
-	ports:
-	- "50082:80"
+
+  phpmyadmin2:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    depends_on:
+      - db2
+    environment:
+      PMA_HOST: db2
+      PMA_USER: root
+      PMA_PASSWORD: pair2
+    ports:
+      - "50082:80"
 
 volumes:
   aawdat2:
